@@ -1,3 +1,23 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 h1, h2, h3, h4, h5, h6 {
-  color: #f2f6ff;
+  color: #f2f6ff,
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
+
+// Theme nebular
+nb-form-field {
+  margin-bottom: 20px;
 }

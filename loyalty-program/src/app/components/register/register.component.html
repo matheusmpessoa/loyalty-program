@@ -1,0 +1,16 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterForm()">
+  <nb-card status="danger">
+    <nb-card-header>CREATE ACCOUNT</nb-card-header>
+    <nb-card-body>
+      <input type="text" nbInput fullWidth fieldSize="large" shape="round" placeholder="User" formControlName="user">
+      <input type="text" nbInput fullWidth fieldSize="large" shape="round" placeholder="Full name" formControlName="fullName">
+      <input type="email" nbInput fullWidth fieldSize="large" shape="round" placeholder="E-mail"
+        formControlName="email">
+      <input type="password" nbInput fullWidth fieldSize="large" shape="round" placeholder="Password"
+        formControlName="password">
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton outline status="danger" type="submit">Sign Up</button>
+    </nb-card-footer>
+  </nb-card>
+</form>
