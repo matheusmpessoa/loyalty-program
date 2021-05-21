@@ -1,13 +1,42 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
-  <nb-card status="success">
-    <nb-card-header>LOGIN</nb-card-header>
-    <nb-card-body>
-      <input type="text" nbInput fullWidth fieldSize="large" shape="round" placeholder="User" formControlName="user">
-      <input type="password" nbInput fullWidth fieldSize="large" shape="round" placeholder="Password"
-        formControlName="password">
-    </nb-card-body>
-    <nb-card-footer>
-      <button nbButton outline status="success" type="submit">Access</button>
-    </nb-card-footer>
-  </nb-card>
+  <div class="card-row">
+    <div class="card-col">
+
+      <nb-card status="success">
+        <nb-card-header>LOGIN</nb-card-header>
+
+        <nb-card-body>
+          <nb-form-field>
+            <input type="text" nbInput fullWidth fieldSize="large" 
+              shape="round" placeholder="User"
+              formControlName="user" id="user"
+              [status]="submittedForm && f.user.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.user.errors" class="danger" status="danger">
+              <p *ngIf="f.user.errors.required">User is required.</p>
+              <p *ngIf="f.user.errors.minlength">User must be at least 5 characters.</p>
+              <p *ngIf="f.user.errors.maxlength">User must have a maximum of 80 characters.</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="password" nbInput fullWidth fieldSize="large" 
+              shape="round" placeholder="Password"
+              formControlName="password" id="password"
+              [status]="submittedForm && f.password.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.password.errors" class="danger" status="danger">
+              <p *ngIf="f.password.errors.required">Password is required.</p>
+              <p *ngIf="f.password.errors.password">Password must be a valid password address.</p>
+              <p *ngIf="f.password.errors.minlength">Password must be at least 8 characters.</p>
+              <p *ngIf="f.password.errors.maxlength">Password must have a maximum of 40 characters</p>
+            </div>
+          </nb-form-field>
+        </nb-card-body>
+
+        <nb-card-footer>
+          <button nbButton outline status="success" type="submit">Access</button>
+        </nb-card-footer>
+      </nb-card>
+
+    </div>
+  </div>
 </form>

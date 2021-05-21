@@ -21,3 +21,29 @@ button {
 nb-form-field {
   margin-bottom: 20px;
 }
+
+:host {
+  display: block;
+  max-height: 25rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-row {
+  display: flex;
+  margin: 0 -0.5rem;
+
+  .card-col {
+    flex: 1 0 calc(50% - 1rem);
+    margin: 0 0.5rem;
+  }
+}
+
+.is-invalid {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + .75rem);
+}
+
+.danger p {
+  margin-left: 20px;
+}
