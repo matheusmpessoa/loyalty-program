@@ -4,7 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { DeliveryComponent } from './components/delivery/delivery.component';
+import { AddressComponent } from './components/address/address.component';
 import { ExchangeProductsComponent } from './components/exchange-products/exchange-products.component';
 
 const routes: Routes = [
@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'orders', component: OrdersComponent },
-  { path: 'delivery', component: DeliveryComponent },
-  { path: 'exchange', component: ExchangeProductsComponent },
+  { path: 'address', component: AddressComponent },
+  { path: 'exchange-products', component: ExchangeProductsComponent },
 ];
 
 

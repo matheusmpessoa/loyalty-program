@@ -7,26 +7,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbCardModule, NbInputModule, NbFormFieldModule } from '@nebular/theme';
+import { NbThemeModule,
+        NbLayoutModule,
+        NbSidebarModule,
+        NbButtonModule,
+        NbCardModule,
+        NbInputModule,
+        NbFormFieldModule,
+        NbListModule,
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DeliveryComponent } from './components/delivery/delivery.component';
+import { AddressComponent } from './components/address/address.component';
 import { ExchangeProductsComponent } from './components/exchange-products/exchange-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
     LoginComponent,
     OrdersComponent,
     RegisterComponent,
-    DeliveryComponent,
+    AddressComponent,
     ExchangeProductsComponent
   ],
   imports: [
@@ -45,6 +51,7 @@ import { ExchangeProductsComponent } from './components/exchange-products/exchan
     NbCardModule,
     NbInputModule,
     NbFormFieldModule,
+    NbListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,32 +7,20 @@
 
         <nb-card-body>
           <nb-form-field>
-            <input type="text" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="User"
-              formControlName="user" id="user"
-              [status]="submittedForm && f.user.errors ? 'danger' : 'basic'">
-            <div *ngIf="submittedForm && f.user.errors" class="danger" status="danger">
-              <p *ngIf="f.user.errors.required">User is required.</p>
-              <p *ngIf="f.user.errors.minlength">User must be at least 5 characters.</p>
-              <p *ngIf="f.user.errors.maxlength">User must have a maximum of 80 characters.</p>
-            </div>
-          </nb-form-field>
-
-          <nb-form-field>
-            <input type="text" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="Full name"
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Full name"
               formControlName="fullName" id="fullName"
               [status]="submittedForm && f.fullName.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.fullName.errors" class="danger" status="danger">
               <p *ngIf="f.fullName.errors.required">Full name is required.</p>
-              <p *ngIf="f.fullName.errors.minlength">E-mail must be at least 5 characters.</p>
-              <p *ngIf="f.fullName.errors.maxlength">E-mail must have a maximum of 50 characters.</p>
+              <p *ngIf="f.fullName.errors.minlength">Full name must be at least 5 characters.</p>
+              <p *ngIf="f.fullName.errors.maxlength">Full name must have a maximum of 50 characters.</p>
             </div>
           </nb-form-field>
 
           <nb-form-field>
-            <input type="email" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="E-mail"
+            <input type="email" nbInput fullWidth
+              fieldSize="large" placeholder="E-mail"
               formControlName="email" id="email"
               [status]="submittedForm && f.email.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.email.errors" class="danger" status="danger">
@@ -44,9 +32,21 @@
           </nb-form-field>
 
           <nb-form-field>
-            <input type="password" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="Password"
-              formControlName="password" id="fullName"
+            <input type="number" nbInput fullWidth
+              fieldSize="large" placeholder="Full name"
+              formControlName="phone" id="phone"
+              [status]="submittedForm && f.phone.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.phone.errors" class="danger" status="danger">
+              <p *ngIf="f.phone.errors.required">Phone is required.</p>
+              <p *ngIf="f.phone.errors.minlength">Phone must be at least 5 characters.</p>
+              <p *ngIf="f.phone.errors.maxlength">Phone must have a maximum of 50 characters.</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="password" nbInput fullWidth
+              fieldSize="large" placeholder="Password"
+              formControlName="password" id="password"
               [status]="submittedForm && f.password.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.password.errors" class="danger" status="danger">
               <p *ngIf="f.password.errors.required">Password is required.</p>
@@ -57,13 +57,13 @@
           </nb-form-field>
 
           <nb-form-field>
-            <input type="password" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="Confirm Password"
-              formControlName="confirmPassword" id="fullName"
+            <input type="password" nbInput fullWidth
+              fieldSize="large" placeholder="Confirm Password"
+              formControlName="confirmPassword" id="confirmPassword"
               [status]="submittedForm && f.confirmPassword.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.confirmPassword.errors" class="danger" status="danger">
               <p *ngIf="f.confirmPassword.errors.required">Confirm Password is required.</p>
-              <p *ngIf="f.confirmPassword.errors.mustMatch">Password must match.</p>
+              <p *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match.</p>
             </div>
           </nb-form-field>
         </nb-card-body>

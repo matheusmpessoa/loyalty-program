@@ -1,6 +1,16 @@
 <nb-layout>
   <nb-layout-header fixed>
-    <navbar></navbar>
+    <div class="publicNav">
+      <a href="/home" routerLink="/home">Home</a>
+      <a href="/login" routerLink="/login">Login</a>
+      <a href="/register" routerLink="/register">Register</a>
+    </div>
+
+    <div class="loggedNav">
+      <a href="/orders" routerLink="/orders">Orders</a>
+      <a href="/exchange-products" routerLink="/exchange-products">Products</a>
+      <a href="/address" routerLink="/address">Addresses</a>
+    </div>
   </nb-layout-header>
 
   <nb-layout-column>

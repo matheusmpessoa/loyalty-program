@@ -1,14 +1,14 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()" novalidate>
   <div class="card-row">
     <div class="card-col">
 
-      <nb-card status="success">
+      <nb-card status="primary">
         <nb-card-header>LOGIN</nb-card-header>
 
         <nb-card-body>
           <nb-form-field>
-            <input type="text" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="User"
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="User"
               formControlName="user" id="user"
               [status]="submittedForm && f.user.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.user.errors" class="danger" status="danger">
@@ -19,8 +19,8 @@
           </nb-form-field>
 
           <nb-form-field>
-            <input type="password" nbInput fullWidth fieldSize="large" 
-              shape="round" placeholder="Password"
+            <input type="password" nbInput fullWidth
+              fieldSize="large" placeholder="Password"
               formControlName="password" id="password"
               [status]="submittedForm && f.password.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.password.errors" class="danger" status="danger">
@@ -33,7 +33,7 @@
         </nb-card-body>
 
         <nb-card-footer>
-          <button nbButton outline status="success" type="submit">Access</button>
+          <button nbButton outline status="primary" type="submit">Access</button>
         </nb-card-footer>
       </nb-card>
 

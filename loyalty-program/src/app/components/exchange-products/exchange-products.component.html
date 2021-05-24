@@ -1,3 +1,30 @@
-<p>
-  exchange-products works!
-</p>
+<div class="card-row">
+  <div class="card-col">
+    <nb-card status="success">
+      <nb-card-header>PRODUCTS AVAILABLE</nb-card-header>
+
+      <nb-card-body>
+        <nb-list>
+          <nb-list-item *ngFor="let item of listProducts">
+            <nb-layout-column class="colored-column-warning">
+              <img src="{{ item.imageURL }}" alt="{{ item.title }}" class="item">
+            </nb-layout-column>
+
+            <nb-layout-column class="colored-column-danger">
+              <div class="card-row">
+                <div class="card-col">
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.nameShop }}</p>
+                  <p>{{ item.description }}</p>
+                  <p>Price: {{ item.priceProduct }}</p>
+                  <p><b>Points: {{ item.points }}</b></p>
+                  <a href="{{ item.linkShop }}" nbButton outline target="_blank" status="success">GET PRODUCT</a>
+                </div>
+              </div>
+            </nb-layout-column>
+          </nb-list-item>
+        </nb-list>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

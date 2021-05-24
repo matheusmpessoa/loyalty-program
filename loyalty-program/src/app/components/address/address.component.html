@@ -1,0 +1,135 @@
+<form [formGroup]="addressForm" (ngSubmit)="onSubmitAddressForm()" novalidate>
+  <div class="card-row">
+    <div class="card-col">
+      <nb-card size="large" status="warning">
+        <nb-card-header>MY ADDRESSES</nb-card-header>
+
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item *ngFor="let addressItem of addresses">
+              <ul>
+                <li><b>{{ addressItem.name }}</b></li>
+                <li>
+                  {{ addressItem.street }} - {{ addressItem.neighborhood }}
+                </li>
+                <li>
+                  {{ addressItem.city }} - {{ addressItem.state }} - 
+                    {{ addressItem.country }} - {{ addressItem.zipCode }}
+                </li>
+                <li>{{ addressItem.description }}</li>
+              </ul>
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+    </div>
+
+    <div class="card-col">
+      <nb-card size="large" status="warning">
+        <nb-card-header>REGISTER ADDRESS</nb-card-header>
+
+        <nb-card-body>
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Name of address"
+              formControlName="name" id="name"
+              [status]="submittedForm && f.name.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.name.errors" class="danger" status="danger">
+              <p *ngIf="f.name.errors.required">Name of address is required.</p>
+              <p *ngIf="f.name.errors.minlength">Name of address must be at least 5 characters.</p>
+              <p *ngIf="f.name.errors.maxlength">Name of address must have a maximum of 50 characters.</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Zip code"
+              formControlName="zipCode" id="zipCode"
+              [status]="submittedForm && f.zipCode.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.zipCode.errors" class="danger" status="danger">
+              <p *ngIf="f.zipCode.errors.required">Zip code name is required.</p>
+              <p *ngIf="f.zipCode.errors.minlength">Zip code must be at least 5 characters.</p>
+              <p *ngIf="f.zipCode.errors.maxlength">Zip code must have a maximum of 10 characters.</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Street"
+              formControlName="street" id="street"
+              [status]="submittedForm && f.street.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.street.errors" class="danger" status="danger">
+              <p *ngIf="f.street.errors.required">Street is required.</p>
+              <p *ngIf="f.street.errors.minlength">Street must be at least 5 characters.</p>
+              <p *ngIf="f.street.errors.maxlength">Street must have a maximum of 60 characters.</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Neighborhood"
+              formControlName="neighborhood" id="neighborhood"
+              [status]="submittedForm && f.neighborhood.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.neighborhood.errors" class="danger" status="danger">
+              <p *ngIf="f.neighborhood.errors.required">Neighborhood is required.</p>
+              <p *ngIf="f.neighborhood.errors.minlength">Neighborhood must be at least 5 characters.</p>
+              <p *ngIf="f.neighborhood.errors.maxlength">Neighborhood must have a maximum of 60 characters</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="City"
+              formControlName="city" id="city"
+              [status]="submittedForm && f.city.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.city.errors" class="danger" status="danger">
+              <p *ngIf="f.city.errors.required">City is required.</p>
+              <p *ngIf="f.city.errors.minlength">City must be at least 3 characters.</p>
+              <p *ngIf="f.city.errors.maxlength">City must have a maximum of 50 characters</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="State"
+              formControlName="state" id="state"
+              [status]="submittedForm && f.state.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.state.errors" class="danger" status="danger">
+              <p *ngIf="f.state.errors.required">State is required.</p>
+              <p *ngIf="f.state.errors.minlength">State must be at least 3 characters.</p>
+              <p *ngIf="f.state.errors.maxlength">State must have a maximum of 50 characters</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Country"
+              formControlName="country" id="country"
+              [status]="submittedForm && f.country.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.country.errors" class="danger" status="danger">
+              <p *ngIf="f.country.errors.required">Country is required.</p>
+              <p *ngIf="f.country.errors.minlength">Country must be at least 5 characters.</p>
+              <p *ngIf="f.country.errors.maxlength">Country must have a maximum of 60 characters</p>
+            </div>
+          </nb-form-field>
+
+          <nb-form-field>
+            <input type="text" nbInput fullWidth
+              fieldSize="large" placeholder="Description"
+              formControlName="description" id="description"
+              [status]="submittedForm && f.description.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.description.errors" class="danger" status="danger">
+              <p *ngIf="f.description.errors.required">Description is required.</p>
+              <p *ngIf="f.description.errors.minlength">Description must be at least 5 characters.</p>
+              <p *ngIf="f.description.errors.maxlength">Description must have a maximum of 60 characters</p>
+            </div>
+          </nb-form-field>
+        </nb-card-body>
+
+        <nb-card-footer>
+          <button nbButton outline status="warning" type="submit">SAVE</button>
+        </nb-card-footer>
+      </nb-card>
+    </div>
+  </div>
+</form>

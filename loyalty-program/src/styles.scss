@@ -1,12 +1,19 @@
 @import 'themes';
-
 @import '~@nebular/theme/styles/globals';
+@import 'assets/nebular.scss';
 
 @include nb-install() {
   @include nb-theme-global();
 };
+
+// General
 h1, h2, h3, h4, h5, h6 {
   color: #f2f6ff,
+}
+
+a {
+  margin: 5px;
+  text-decoration: !important none;
 }
 
 input {
@@ -15,35 +22,4 @@ input {
 
 button {
   margin: 10px;
-}
-
-// Theme nebular
-nb-form-field {
-  margin-bottom: 20px;
-}
-
-:host {
-  display: block;
-  max-height: 25rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.card-row {
-  display: flex;
-  margin: 0 -0.5rem;
-
-  .card-col {
-    flex: 1 0 calc(50% - 1rem);
-    margin: 0 0.5rem;
-  }
-}
-
-.is-invalid {
-  border-color: #dc3545;
-  padding-right: calc(1.5em + .75rem);
-}
-
-.danger p {
-  margin-left: 20px;
 }
