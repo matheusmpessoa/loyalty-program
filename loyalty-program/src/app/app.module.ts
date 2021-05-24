@@ -15,6 +15,7 @@ import { NbThemeModule,
         NbInputModule,
         NbFormFieldModule,
         NbListModule,
+        NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -52,6 +53,7 @@ import { ExchangeProductsComponent } from './components/exchange-products/exchan
     NbInputModule,
     NbFormFieldModule,
     NbListModule,
+    NbToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
