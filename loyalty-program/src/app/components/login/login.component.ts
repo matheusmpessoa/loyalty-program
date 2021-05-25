@@ -10,25 +10,25 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
+  public loginForm!: FormGroup;
   public submittedForm: boolean = false;
   public users!: any;
   public loading = false;
+  public loggedUser!: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: NbToastrService,
     private authService: AuthService,
     private router: Router
-  ) {
-    this.loginForm = this.buildForm();
-  }
+  ) { }
 
   ngOnInit() {
+    this.buildForm();
   }
 
-  private buildForm() {
-    return this.formBuilder.group({
+  public buildForm() {
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.minLength(5), Validators.maxLength(50)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(40)]],
     })
@@ -55,15 +55,15 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password,
     }
 
-    let loggedUser = this.users.reduce(function(a: any, b: any) {
+    this.loggedUser = this.users.reduce(function(a: any, b: any) {
       return (a.email == body.email && a) || (b.password == body.password && b)
     });
 
-    if(!loggedUser) this.showToastError('danger');
+    if(!this.loggedUser) this.showToastError('danger');
 
-    if(loggedUser) {
+    if(this.loggedUser) {
       this.loading = true;
-      this.authService.setUser(loggedUser);
+      this.authService.setUser(this.loggedUser);
 
       setTimeout(() => {
         this.loading = false, 3000;

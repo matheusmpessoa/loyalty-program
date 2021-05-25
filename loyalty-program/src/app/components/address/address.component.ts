@@ -56,7 +56,7 @@ export class AddressComponent implements OnInit {
   }
 
   public showToastError(status: NbComponentStatus) {
-    this.toastrService.show(status || 'Success', `Error. Try with other e-mail!`, { status });
+    this.toastrService.show(status || 'Success', `Error. Fill the form again`, { status });
   }
 
 }
