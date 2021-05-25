@@ -1,5 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NbToastrService } from '@nebular/theme';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'login',
@@ -9,9 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public submittedForm: boolean = false;
+  users!: any;
 
   constructor(
     private formBuilder: FormBuilder,
+    private toastrService: NbToastrService,
   ) {
     this.loginForm = this.buildForm();
   }
@@ -21,17 +25,19 @@ export class LoginComponent implements OnInit {
 
   private buildForm() {
     return this.formBuilder.group({
-      user: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(80)]],
+      email: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(80)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(40)]],
     })
   }
 
+  get f(): any { return this.loginForm.controls; }
+
   public onSubmitLoginForm() {
     this.submittedForm = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
 
-    console.log(this.loginForm);
   }
-
-  get f(): any { return this.loginForm.controls; }
 
 }

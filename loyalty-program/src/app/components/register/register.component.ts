@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from 'src/app/services/users.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Register } from '../../models/register.model';
 import { MustMatch } from './../../helpers/must-match.validator';
 import { v4 as uuidv4 } from 'uuid';
-import { NbToastRef, NbToastrService } from '@nebular/theme';
+import { NbToastrService } from '@nebular/theme';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,11 +15,10 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   public submittedForm: boolean = false;
-  private index: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
+    private authService: AuthService,
     private toastrService: NbToastrService,
     private router: Router
   ) {
@@ -58,24 +57,20 @@ export class RegisterComponent implements OnInit {
       password: this.registerForm.value.password,
     }
 
-    this.usersService.registerUser(body).subscribe(
+    this.authService.registerUser(body).subscribe(
       (res) => {
         console.log(res);
         this.showToast('top-right', 'success', 'Saved with Success');
-        this.router.navigate(['/exchange-products']);
-      },
-      (error) => {
+        this.router.navigate(['/login']);
+      },(error) => {
         console.log(error);
+        this.showToast('top-right', 'danger', 'ERROR');
       }
     );
   }
 
   public showToast(position: any, status: any, message: string) {
-    this.index += 1;
-    this.toastrService.show(
-      status || 'Success',
-      `Message`,
-      { position, status });
+    this.toastrService.show(message, { position, status });
   }
 
 }

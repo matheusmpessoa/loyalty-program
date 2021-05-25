@@ -7,14 +7,14 @@
 
         <nb-card-body>
           <nb-form-field>
-            <input type="text" nbInput fullWidth
-              fieldSize="large" placeholder="User"
-              formControlName="user" id="user"
-              [status]="submittedForm && f.user.errors ? 'danger' : 'basic'">
-            <div *ngIf="submittedForm && f.user.errors" class="danger" status="danger">
-              <p *ngIf="f.user.errors.required">User is required.</p>
-              <p *ngIf="f.user.errors.minlength">User must be at least 5 characters.</p>
-              <p *ngIf="f.user.errors.maxlength">User must have a maximum of 80 characters.</p>
+            <input type="email" nbInput fullWidth
+              fieldSize="large" placeholder="E-mail"
+              formControlName="email" id="email"
+              [status]="submittedForm && f.email.errors ? 'danger' : 'basic'">
+            <div *ngIf="submittedForm && f.email.errors" class="danger" status="danger">
+              <p *ngIf="f.email.errors.required">E-mail is required.</p>
+              <p *ngIf="f.email.errors.minlength">E-mail must be at least 5 characters.</p>
+              <p *ngIf="f.email.errors.maxlength">E-mail must have a maximum of 80 characters.</p>
             </div>
           </nb-form-field>
 

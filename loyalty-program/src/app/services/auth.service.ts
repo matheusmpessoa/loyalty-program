@@ -6,15 +6,21 @@ import { Endpoints } from 'src/environments/endpoints';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class AuthService {
 
   constructor(
     private http: HttpClient
   ) {}
 
   public registerUser(body: any) {
-      const urlToRequest = `${ Endpoints.urlBase }/users`;
-      return this.http.post(urlToRequest, body);
+    const urlToRequest = `${ Endpoints.urlBase }/users`;
+    return this.http.post(urlToRequest, body);
   }
+
+  public getLoginUser() {
+    const urlToRequest = `${ Endpoints.urlBase }/users`;
+    return this.http.get(urlToRequest);
+  }
+
 }
 
