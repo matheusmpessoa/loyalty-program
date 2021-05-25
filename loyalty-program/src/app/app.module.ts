@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +14,7 @@ import { NbThemeModule,
         NbInputModule,
         NbFormFieldModule,
         NbListModule,
+        NbSpinnerModule,
         NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -25,6 +25,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddressComponent } from './components/address/address.component';
 import { ExchangeProductsComponent } from './components/exchange-products/exchange-products.component';
+import { ListAddressComponent } from './components/list-address/list-address.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ExchangeProductsComponent } from './components/exchange-products/exchan
     OrdersComponent,
     RegisterComponent,
     AddressComponent,
-    ExchangeProductsComponent
+    ExchangeProductsComponent,
+    ListAddressComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,6 @@ import { ExchangeProductsComponent } from './components/exchange-products/exchan
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'cosmic' }),
     NbLayoutModule,
@@ -53,6 +54,7 @@ import { ExchangeProductsComponent } from './components/exchange-products/exchan
     NbInputModule,
     NbFormFieldModule,
     NbListModule,
+    NbSpinnerModule,
     NbToastrModule.forRoot(),
   ],
   providers: [],

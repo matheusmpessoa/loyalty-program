@@ -1,25 +1,93 @@
 {
   "users": [
     {
-      "id": 3333,
-      "fullName": "Brad Putt",
-      "email": "macoratti@yahoo.com",
-      "phone": "991284780",
-      "password": "teste123"
-    },
-    {
-      "id": "228a1d0e-f6d2-417d-bdfb-fd9b868ee637",
+      "id": "ad742ec4-7572-47de-9a77-c7f8e44e1154",
       "fullName": "Matheus Pessoa",
-      "email": "matheus@gm.com",
+      "email": "matheus@hotmail.com",
       "phone": "13991711996",
-      "password": "matheus22"
+      "password": "matheus10"
     },
     {
-      "id": "f2c38dff-f722-4c48-8d4b-845062b4d92d",
-      "fullName": "Matheus Pessoa",
+      "id": "83e06e84-b470-422f-a9bc-300441395b9a",
+      "fullName": "MATHEUS MELO PESSOA DOS SANTOS",
       "email": "matheusmpessoa17@gmail.com",
       "phone": "13991711996",
-      "password": "matheus22"
+      "password": "matheus10"
+    }
+  ],
+  "address": [
+    {
+      "id": 1,
+      "name": "Home",
+      "zipCode": "11199-410",
+      "city": "Santos",
+      "state": "SP",
+      "street": "Av Ana Costa 777",
+      "neighborhood": "Gonzaga",
+      "country": "Brasil",
+      "description": "House on the corner street"
+    },
+    {
+      "id": 2,
+      "name": "Work",
+      "zipCode": "11299-555",
+      "city": "São Paulo",
+      "state": "SP",
+      "street": "Av Paulista 777",
+      "neighborhood": "Centro",
+      "country": "Brasil"
+    },
+    {
+      "id": 3,
+      "name": "Gym",
+      "zipCode": "18199-674",
+      "city": "São Paulo",
+      "state": "SP",
+      "street": "Av Ibirapuera 777",
+      "country": "Brasil",
+      "description": "The color of the building is blue"
+    },
+    {
+      "id": 4,
+      "name": "Girlfriend",
+      "zipCode": "14434-289",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "street": "Av Brasil 777",
+      "country": "Brasil"
+    },
+    {
+      "name": "Visconde de Farias",
+      "zipCode": "11075710",
+      "street": "Visconde de Farias",
+      "neighborhood": "Gonzaga",
+      "city": "Santos",
+      "state": "SÃO PAULO",
+      "country": "Brasil",
+      "description": "aaaaaaaaaaaaaa",
+      "id": 5
+    },
+    {
+      "name": "Visconde de Farias",
+      "zipCode": "11075710",
+      "street": "Visconde de Farias",
+      "neighborhood": "Gonzaga",
+      "city": "Santos",
+      "state": "SÃO PAULO",
+      "country": "Brasil",
+      "description": "aaaaaaaaaaaaaa",
+      "id": 6
+    },
+    {
+      "name": "Visconde de Farias",
+      "zipCode": "11075710",
+      "street": "Visconde de Farias",
+      "neighborhood": "Gonzaga",
+      "city": "Santos",
+      "state": "SÃO PAULO",
+      "country": "Brasil",
+      "description": "aaaaaaaaaaaaaa",
+      "id": 7
     }
   ]
 }

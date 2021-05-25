@@ -12,9 +12,10 @@
               formControlName="email" id="email"
               [status]="submittedForm && f.email.errors ? 'danger' : 'basic'">
             <div *ngIf="submittedForm && f.email.errors" class="danger" status="danger">
-              <p *ngIf="f.email.errors.required">E-mail is required.</p>
-              <p *ngIf="f.email.errors.minlength">E-mail must be at least 5 characters.</p>
-              <p *ngIf="f.email.errors.maxlength">E-mail must have a maximum of 80 characters.</p>
+              <p *ngIf="f.email.errors.required">Email is required.</p>
+              <p *ngIf="f.email.errors.email">E-mail input must be a valid e-mail address.</p>
+              <p *ngIf="f.email.errors.minlength">E-mail must be at least 8 characters.</p>
+              <p *ngIf="f.email.errors.maxlength">E-mail must have a maximum of 50 characters.</p>
             </div>
           </nb-form-field>
 

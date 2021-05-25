@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Register } from '../models/register.model';
 import { Endpoints } from 'src/environments/endpoints';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  public user!: any;
 
   constructor(
     private http: HttpClient
@@ -17,10 +17,13 @@ export class AuthService {
     return this.http.post(urlToRequest, body);
   }
 
-  public getLoginUser() {
+  public getUsers() {
     const urlToRequest = `${ Endpoints.urlBase }/users`;
     return this.http.get(urlToRequest);
   }
 
-}
+  public setUser(loggedUser: any) {
+    this.user = loggedUser;
+  }
 
+}
