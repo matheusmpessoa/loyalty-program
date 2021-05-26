@@ -9,22 +9,21 @@ import { AddressService } from 'src/app/services/address.service';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-  public addressForm: FormGroup;
+  public addressForm!: FormGroup;
   public submittedForm: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private addressService: AddressService,
     private toastrService: NbToastrService,
-  ) {
-    this.addressForm = this.buildFormAddress();
-  }
+  ) { }
 
   ngOnInit() {
+    this.buildFormAddress();
   }
 
-  private buildFormAddress() {
-    return this.formBuilder.group({
+  public buildFormAddress() {
+    this.addressForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       zipCode: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       street: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]],
@@ -38,7 +37,6 @@ export class AddressComponent implements OnInit {
 
   public onSubmitAddressForm() {
     this.submittedForm = true;
-    console.log(this.addressForm);
 
     this.addressService.registerAddress(this.addressForm.value).subscribe(
       (res) => {

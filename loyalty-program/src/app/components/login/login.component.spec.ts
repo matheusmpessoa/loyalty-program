@@ -15,7 +15,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { Register } from 'src/app/models/register.model';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
@@ -73,13 +73,13 @@ fdescribe('LoginComponent', () => {
 
   describe('buildForm function', () => {
     it('buildForm', () => {
-      const testUser = {
+      const mock_user = {
         email: 'test@test.com',
         password: '12345',
       };
 
-      component.loginForm.controls['email'].setValue(testUser.email);
-      component.loginForm.controls['password'].setValue(testUser.password);
+      component.loginForm.controls['email'].setValue(mock_user.email);
+      component.loginForm.controls['password'].setValue(mock_user.password);
     });
 
     it('loginForm invalid when empty', () => {
@@ -107,6 +107,7 @@ fdescribe('LoginComponent', () => {
     it('form should be valid', () => {
       component.loginForm.controls.email.setValue('matheus@gmail.com');
       component.loginForm.controls.password.setValue('test12345');
+
       expect(component.loginForm.valid).toBeTruthy();
     });
   });
