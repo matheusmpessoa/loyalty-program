@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { Register } from '../../models/register.model';
 import { MustMatch } from './../../helpers/must-match.validator';
 import { v4 as uuidv4 } from 'uuid';
-import { NbCardBodyComponent, NbComponentStatus, NbToastrService } from '@nebular/theme';
-import { Router } from '@angular/router';
+import { NbComponentStatus, NbToastrService } from '@nebular/theme';
 
 @Component({
   selector: 'register',
@@ -13,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  public registerForm: FormGroup;
+  public registerForm!: FormGroup;
   public submittedForm: boolean = false;
   public users!: any;
   public loading = false;
@@ -22,15 +20,14 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private toastrService: NbToastrService,
-    private router: Router
-  ) {
-    this.registerForm = this.buildFormSignUp();
+  ) { }
+
+  ngOnInit() {
+    this.buildFormSignUp();
   }
 
-  ngOnInit() {}
-
-  private buildFormSignUp() {
-    return this.formBuilder.group(
+  public buildFormSignUp() {
+    this.registerForm = this.formBuilder.group(
       {
         fullName: [ '',[Validators.required,
             Validators.minLength(5),
@@ -77,9 +74,7 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  get f(): any {
-    return this.registerForm.controls;
-  }
+  get f(): any { return this.registerForm.controls; }
 
   public onSubmitRegisterForm() {
     this.submittedForm = true;
