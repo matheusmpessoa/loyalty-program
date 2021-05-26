@@ -13,7 +13,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { AddressService } from 'src/app/services/address.service';
 
-fdescribe('AddressComponent', () => {
+describe('AddressComponent', () => {
   let component: AddressComponent;
   let fixture: ComponentFixture<AddressComponent>;
 
